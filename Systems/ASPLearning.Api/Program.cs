@@ -3,6 +3,8 @@ using ASPLearning.Services.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddAppLogger();
+
 var services = builder.Services;
 
 services.AddControllers();
