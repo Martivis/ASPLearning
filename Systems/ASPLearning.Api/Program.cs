@@ -7,8 +7,10 @@ builder.AddAppLogger();
 
 var services = builder.Services;
 
+services.AddHttpContextAccessor();
 services.AddControllers();
 services.AddSwaggerSettings();
+services.AddAppVersioning();
 services.AddAppSwagger();
 services.AddAppHealthCheck();
 
