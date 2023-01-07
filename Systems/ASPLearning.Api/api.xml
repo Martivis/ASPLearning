@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASPLearning.Api</name>
+    </assembly>
+    <members>
+        <member name="M:ASPLearning.Api.Controllers.HomeController.GetInt">
+            <summary>
+            Get test value
+            </summary>
+            <returns>254</returns>
+        </member>
+    </members>
+</doc>
