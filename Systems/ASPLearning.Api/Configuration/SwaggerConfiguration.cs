@@ -13,6 +13,8 @@ public static class SwaggerConfiguration
 	public static IServiceCollection AddAppSwagger(this IServiceCollection services)
 	{
 		var settings = Settings.Load<SwaggerSettings>("Swagger");
+		services.AddSingleton(settings);
+
 		if (!settings.Enabled)
 			return services;
 
