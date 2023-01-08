@@ -2,7 +2,7 @@
 
 using System.Runtime.CompilerServices;
 using ASPLearning.Settings;
-using ASPLearning.Services.Settings;
+using ASPLearning.Api.Settings;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.OpenApi.Models;

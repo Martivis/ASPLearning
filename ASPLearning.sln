@@ -15,11 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPLearning.Api", "Systems\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPLearning.Settings", "ASPLearning.Settings\ASPLearning.Settings.csproj", "{4E07574E-7F4D-4FFD-8B56-F6A552BF3E0C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPLearning.Services.Settings", "ASPLearning.Services.Settings\ASPLearning.Services.Settings.csproj", "{BDB78639-841E-4983-824D-CFB0F183C0B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPLearning.Context", "ASPLearning.Context\ASPLearning.Context.csproj", "{7FFB68D5-EBC7-4540-AEF5-E65F7872BF03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPLearning.Context", "ASPLearning.Context\ASPLearning.Context.csproj", "{7FFB68D5-EBC7-4540-AEF5-E65F7872BF03}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPLearning.Context.Entities", "ASPLearning.Context.Entities\ASPLearning.Context.Entities.csproj", "{52DCED35-3768-4A6C-9AB8-E3D499C4D0FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPLearning.Context.Entities", "ASPLearning.Context.Entities\ASPLearning.Context.Entities.csproj", "{52DCED35-3768-4A6C-9AB8-E3D499C4D0FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +33,6 @@ Global
 		{4E07574E-7F4D-4FFD-8B56-F6A552BF3E0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E07574E-7F4D-4FFD-8B56-F6A552BF3E0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E07574E-7F4D-4FFD-8B56-F6A552BF3E0C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BDB78639-841E-4983-824D-CFB0F183C0B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BDB78639-841E-4983-824D-CFB0F183C0B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BDB78639-841E-4983-824D-CFB0F183C0B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BDB78639-841E-4983-824D-CFB0F183C0B3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7FFB68D5-EBC7-4540-AEF5-E65F7872BF03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7FFB68D5-EBC7-4540-AEF5-E65F7872BF03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FFB68D5-EBC7-4540-AEF5-E65F7872BF03}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -54,7 +48,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{AA3C6821-27D7-4470-B200-450765087DA6} = {F9A8D1C6-2626-4D7F-933A-A2903DC27268}
 		{4E07574E-7F4D-4FFD-8B56-F6A552BF3E0C} = {458AA72D-66A3-4464-B630-8A95C7E95926}
-		{BDB78639-841E-4983-824D-CFB0F183C0B3} = {9668B85E-C0B8-493F-9D47-1702D732AB01}
 		{7FFB68D5-EBC7-4540-AEF5-E65F7872BF03} = {4B8513BB-DE40-4DD3-9982-40B6BE366BE9}
 		{52DCED35-3768-4A6C-9AB8-E3D499C4D0FB} = {4B8513BB-DE40-4DD3-9982-40B6BE366BE9}
 	EndGlobalSection

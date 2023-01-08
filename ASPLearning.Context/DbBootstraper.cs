@@ -5,7 +5,7 @@ using ASPLearning.Context.Factories;
 using ASPLearning.Settings;
 using ASPLearning.Context.Settings;
 
-public static class Bootstraper
+public static class DbBootstraper
 {
 	public static IServiceCollection AddAppUsersDb(this IServiceCollection services)
 	{

@@ -1,6 +1,5 @@
 using ASPLearning.Api.Configuration;
 using ASPLearning.Context;
-using ASPLearning.Services.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
