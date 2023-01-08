@@ -10,5 +10,11 @@
             </summary>
             <returns>254</returns>
         </member>
+        <member name="M:ASPLearning.Api.Controllers.HomeController.GetNewInt">
+            <summary>
+            Get test value 2.0
+            </summary>
+            <returns>15</returns>
+        </member>
     </members>
 </doc>

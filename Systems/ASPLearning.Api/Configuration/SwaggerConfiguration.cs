@@ -3,17 +3,31 @@
 using System.Runtime.CompilerServices;
 using ASPLearning.Settings;
 using ASPLearning.Services.Settings;
-
+using Swashbuckle.AspNetCore.SwaggerGen;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.OpenApi.Models;
 
 public static class SwaggerConfiguration
 {
+	private static readonly string _appTitle = "ASP Learning Api";
 	public static IServiceCollection AddAppSwagger(this IServiceCollection services)
 	{
 		var settings = Settings.Load<SwaggerSettings>("Swagger");
 		if (!settings.Enabled)
 			return services;
 
-		services.AddEndpointsApiExplorer();
+		services.AddOptions<SwaggerGenOptions>()
+			.Configure<IApiVersionDescriptionProvider>((options, provider) =>
+			{
+				foreach (var avd in provider.ApiVersionDescriptions)
+				{
+					options.SwaggerDoc(avd.GroupName, new OpenApiInfo
+					{
+						Version = avd.GroupName,
+						Title = $"{_appTitle}"
+					});
+				}
+			});
 		services.AddSwaggerGen(options =>
 		{
 			var xmlFileName = "api.xml";
@@ -31,7 +45,18 @@ public static class SwaggerConfiguration
 		if (!settings?.Enabled ?? true)
 			return;
 
-		app.UseSwagger();
-		app.UseSwaggerUI();
+		app.UseSwagger(options =>
+		{
+			options.RouteTemplate = "api/{documentname}/api.yaml";
+		});
+
+		var provider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
+
+		app.UseSwaggerUI(options =>
+		{
+			provider.ApiVersionDescriptions.ToList().ForEach(description =>
+				options.SwaggerEndpoint($"/api/{description.GroupName}/api.yaml", description.GroupName.ToUpperInvariant())
+				);
+		});
 	}
 }
