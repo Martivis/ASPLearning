@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\ASPLearning.Context\ASPLearning.Context.csproj" />
     <ProjectReference Include="..\..\ASPLearning.Services.Settings\ASPLearning.Services.Settings.csproj" />
     <ProjectReference Include="..\..\ASPLearning.Settings\ASPLearning.Settings.csproj" />
   </ItemGroup>
