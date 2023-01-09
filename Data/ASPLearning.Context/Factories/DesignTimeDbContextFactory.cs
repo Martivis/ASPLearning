@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
-public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<UsersDbContext>
+public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
 {
     private const string migrationProjctPrefix = "ASPLearning.Context.Migrations";
 
-    public UsersDbContext CreateDbContext(string[] args)
+    public AppDbContext CreateDbContext(string[] args)
     {
         var provider = (args?[0] ?? $"{DbType.MSSQL}").ToLower();
 
@@ -17,10 +17,10 @@ public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<UsersDbCon
              .Build();
 
 
-        DbContextOptions<UsersDbContext> options;
+        DbContextOptions<AppDbContext> options;
         if (provider.Equals($"{DbType.MSSQL}".ToLower()))
         {
-            options = new DbContextOptionsBuilder<UsersDbContext>()
+            options = new DbContextOptionsBuilder<AppDbContext>()
                     .UseSqlServer(
                         configuration.GetConnectionString(provider),
                         opts => opts
@@ -31,7 +31,7 @@ public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<UsersDbCon
         else
         if (provider.Equals($"{DbType.PostgreSQL}".ToLower()))
         {
-            options = new DbContextOptionsBuilder<UsersDbContext>()
+            options = new DbContextOptionsBuilder<AppDbContext>()
                     .UseNpgsql(
                         configuration.GetConnectionString(provider),
                         opts => opts
@@ -44,7 +44,7 @@ public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<UsersDbCon
             throw new Exception($"Unsupported provider: {provider}");
         }
 
-        var dbf = new UsersDbContextFactory(options);
+        var dbf = new AppDbContextFactory(options);
         return dbf.Create();
     }
 }

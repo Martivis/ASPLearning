@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Data\ASPLearning.Context.Entities\ASPLearning.Context.Entities.csproj" />
-    <ProjectReference Include="..\Data\ASPLearning.Context\ASPLearning.Context.csproj" />
+    <ProjectReference Include="..\..\ASPLearning.Context.Entities\ASPLearning.Context.Entities.csproj" />
+    <ProjectReference Include="..\..\ASPLearning.Context\ASPLearning.Context.csproj" />
   </ItemGroup>
 
 </Project>

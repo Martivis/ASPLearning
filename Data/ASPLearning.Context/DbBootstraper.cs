@@ -12,8 +12,8 @@ public static class DbBootstraper
 		var settings = ASPLearning.Settings.Settings.Load<UsersDbSettings>("UsersDb");
 		services.AddSingleton(settings);
 
-		var dbOptionsDelegate = UsersDbContextOptionsFactory.Configure(settings.ConnectionString, settings.DbType);
-		services.AddDbContextFactory<UsersDbContext>(dbOptionsDelegate);
+		var dbOptionsDelegate = DbContextOptionsFactory.Configure(settings.ConnectionString, settings.DbType);
+		services.AddDbContextFactory<AppDbContext>(dbOptionsDelegate);
 
 		return services;
 	}

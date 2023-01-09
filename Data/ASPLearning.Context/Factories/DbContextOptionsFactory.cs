@@ -10,13 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-public static class UsersDbContextOptionsFactory
+public static class DbContextOptionsFactory
 {
 	private const string migrationProjectPrefix = "ASPLearning.Context.Migrations";
 
-	public static DbContextOptions<UsersDbContext> Create(string connectionString, DbType dbType)
+	public static DbContextOptions<AppDbContext> Create(string connectionString, DbType dbType)
 	{
-		var builder = new DbContextOptionsBuilder<UsersDbContext>();
+		var builder = new DbContextOptionsBuilder<AppDbContext>();
 		Configure(connectionString, dbType).Invoke(builder);
 		return builder.Options;
 	}

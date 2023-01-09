@@ -26,10 +26,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ASPLearning.Context.MigrationsPostgreSQL\ASPLearning.Context.MigrationsPostgreSQL.csproj" />
     <ProjectReference Include="..\..\Data\ASPLearning.Context.Entities\ASPLearning.Context.Entities.csproj" />
     <ProjectReference Include="..\..\Data\ASPLearning.Context\ASPLearning.Context.csproj" />
     <ProjectReference Include="..\..\Data\Migrations\ASPLearning.Context.MigrationsMSSQL\ASPLearning.Context.MigrationsMSSQL.csproj" />
+    <ProjectReference Include="..\..\Data\Migrations\ASPLearning.Context.MigrationsPostgreSQL\ASPLearning.Context.MigrationsPostgreSQL.csproj" />
     <ProjectReference Include="..\..\Shared\ASPLearning.Settings\ASPLearning.Settings.csproj" />
   </ItemGroup>
 
