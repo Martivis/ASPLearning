@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -14,6 +14,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
     <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
     <PackageReference Include="Serilog.AspNetCore.Enrichers.CorrelationId" Version="1.0.0" />
@@ -22,8 +26,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\ASPLearning.Context.MigrationsPostgreSQL\ASPLearning.Context.MigrationsPostgreSQL.csproj" />
     <ProjectReference Include="..\..\Data\ASPLearning.Context.Entities\ASPLearning.Context.Entities.csproj" />
     <ProjectReference Include="..\..\Data\ASPLearning.Context\ASPLearning.Context.csproj" />
+    <ProjectReference Include="..\..\Data\Migrations\ASPLearning.Context.MigrationsMSSQL\ASPLearning.Context.MigrationsMSSQL.csproj" />
     <ProjectReference Include="..\..\Shared\ASPLearning.Settings\ASPLearning.Settings.csproj" />
   </ItemGroup>
 
