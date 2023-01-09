@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Shared\ASPLearning.Settings\ASPLearning.Settings.csproj" />
     <ProjectReference Include="..\ASPLearning.Context.Entities\ASPLearning.Context.Entities.csproj" />
-    <ProjectReference Include="..\ASPLearning.Settings\ASPLearning.Settings.csproj" />
   </ItemGroup>
 
 </Project>
