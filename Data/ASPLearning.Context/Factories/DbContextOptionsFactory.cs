@@ -33,7 +33,6 @@ public static class DbContextOptionsFactory
 						options =>
 						{
 							options.CommandTimeout((int)TimeSpan.FromMinutes(10).TotalSeconds)
-									.MigrationsHistoryTable("_EFMigrationsHistory", "public")
 									.MigrationsAssembly($"{migrationProjectPrefix}{DbType.MSSQL}");
 						});
 					break;
