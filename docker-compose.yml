@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  asplearning_mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+
+  asplearning.api:
+    image: ${DOCKER_REGISTRY-}asplearningapi
+    build:
+      context: .
+      dockerfile: Systems/ASPLearning.Api/Dockerfile
+    depends_on:
+      - asplearning_mssql

@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  asplearning_mssql:
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=P@ssw0rd
+    ports:
+      - 5212:5212
+    networks:
+      - shared_asplearning
+    volumes:
+      - ~/.docker-conf/mssql/data/:/var/lib/mssql/data
+
+  asplearning.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "80"
+      - "443"
+
+networks:
+  shared_asplearning:
+    name: asplearing
+    driver: bridge
