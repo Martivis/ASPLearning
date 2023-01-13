@@ -8,6 +8,8 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <DocumentationFile>api.xml</DocumentationFile>
+    <DockerfileContext>..\..</DockerfileContext>
+    <DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>

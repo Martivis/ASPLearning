@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ASPLearning.Context.MigrationsPostgreSQL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230109163114_Init")]
+    [Migration("20230113203659_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -20,6 +20,7 @@ namespace ASPLearning.Context.MigrationsPostgreSQL.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasDefaultSchema("appdb")
                 .HasAnnotation("ProductVersion", "7.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
@@ -49,7 +50,7 @@ namespace ASPLearning.Context.MigrationsPostgreSQL.Migrations
                     b.HasIndex("Uid")
                         .IsUnique();
 
-                    b.ToTable("Users");
+                    b.ToTable("users", "appdb");
                 });
 #pragma warning restore 612, 618
         }

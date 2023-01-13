@@ -12,8 +12,12 @@ namespace ASPLearning.Context.MigrationsPostgreSQL.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.EnsureSchema(
+                name: "appdb");
+
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "users",
+                schema: "appdb",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -24,12 +28,13 @@ namespace ASPLearning.Context.MigrationsPostgreSQL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.PrimaryKey("PK_users", x => x.Id);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Users_Uid",
-                table: "Users",
+                name: "IX_users_Uid",
+                schema: "appdb",
+                table: "users",
                 column: "Uid",
                 unique: true);
         }
@@ -38,7 +43,8 @@ namespace ASPLearning.Context.MigrationsPostgreSQL.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "users",
+                schema: "appdb");
         }
     }
 }

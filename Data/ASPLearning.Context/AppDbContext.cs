@@ -17,6 +17,9 @@ namespace ASPLearning.Context
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			base.OnModelCreating(modelBuilder);
+
+			modelBuilder.Entity<User>().ToTable("users");
+			modelBuilder.HasDefaultSchema("appdb");
 		}
 	}
 }

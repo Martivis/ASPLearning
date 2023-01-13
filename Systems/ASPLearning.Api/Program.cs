@@ -1,5 +1,6 @@
 using ASPLearning.Api.Configuration;
 using ASPLearning.Context;
+using ASPLearning.Context.Setup;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,4 +23,8 @@ app.UseAppHealthChecks();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
+
+DbInitializer.Execute(app.Services);
+DbSeeder.AddDemoData(app.Services);
+
 app.Run();

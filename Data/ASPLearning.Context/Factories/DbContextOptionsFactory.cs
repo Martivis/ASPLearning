@@ -44,7 +44,7 @@ public static class DbContextOptionsFactory
 						{
 							options.CommandTimeout((int)TimeSpan.FromMinutes(10).TotalSeconds)
 									.MigrationsHistoryTable("_EFMigrationsHistory", "public")
-									.MigrationsAssembly($"{migrationProjectPrefix}{DbType.MSSQL}");
+									.MigrationsAssembly($"{migrationProjectPrefix}{DbType.PostgreSQL}");
 						});
 					break;
 			}
