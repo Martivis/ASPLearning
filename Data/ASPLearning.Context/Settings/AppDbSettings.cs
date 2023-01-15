@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ASPLearning.Context.Settings
 {
-	public class UsersDbSettings
+	public class AppDbSettings
 	{
 		public DbType DbType { get; set; }
 		public string ConnectionString { get; set; }

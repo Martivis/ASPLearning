@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ASPLearning.Context.MigrationsMSSQL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230113212949_Init")]
+    [Migration("20230115200312_Init")]
     partial class Init
     {
         /// <inheritdoc />

@@ -5,11 +5,11 @@ using ASPLearning.Context;
 using ASPLearning.Settings;
 using ASPLearning.Context.Settings;
 
-public static class DbBootstraper
+public static class DbServiesExtentions
 {
 	public static IServiceCollection AddAppUsersDb(this IServiceCollection services)
 	{
-		var settings = ASPLearning.Settings.Settings.Load<UsersDbSettings>("UsersDb");
+		var settings = ASPLearning.Settings.Settings.Load<AppDbSettings>("Database");
 		services.AddSingleton(settings);
 
 		var dbOptionsDelegate = DbContextOptionsFactory.Configure(settings.ConnectionString, settings.DbType);
