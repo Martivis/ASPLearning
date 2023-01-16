@@ -6,12 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-public class User : BaseEntity
+public class Text : BaseEntity
 {
-	public string Name { get; set; }
-	public string Email { get; set; }
-	public int AverageSpeed { get; set; } = 0;
-	public int TextsCount { get; set; } = 0;
+	public string Title { get; set; }
+	public string Content { get; set; }
+	public int Size { get; set; }
 	public ICollection<Trial> Trials { get; set; }
 }
