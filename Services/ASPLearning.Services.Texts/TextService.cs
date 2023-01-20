@@ -16,12 +16,12 @@ public class TextService : ITextService
 {
 	private readonly IDbContextFactory<AppDbContext> _dbContextFactory;
 	private readonly IMapper _mapper;
-	private readonly IModelValidator<AddTextModel> _addTextModelValidator;
+	private readonly IModelValidator<EditTextModel> _addTextModelValidator;
 
 	public TextService(
 		IDbContextFactory<AppDbContext> dbContextFactory,
 		IMapper mapper, 
-		IModelValidator<AddTextModel> addTextModelValidator
+		IModelValidator<EditTextModel> addTextModelValidator
 		)
 	{
 		_dbContextFactory = dbContextFactory;
@@ -43,7 +43,7 @@ public class TextService : ITextService
 		return data;
 	}
 
-	public async Task<TextModel> AddText(AddTextModel model)
+	public async Task AddText(EditTextModel model)
 	{
 		_addTextModelValidator.Check(model);
 
@@ -54,7 +54,7 @@ public class TextService : ITextService
 		await context.AddAsync(text);
 		context.SaveChanges();
 
-		return _mapper.Map<TextModel>(text);
+		//return _mapper.Map<TextModel>(text);
 	}
 
 	public async Task DeleteBook(Guid guid)
@@ -68,7 +68,6 @@ public class TextService : ITextService
 		context.SaveChanges();
 	}
 
-
 	public async Task<TextModel> GetText(Guid guid)
 	{
 		using var context = await _dbContextFactory.CreateDbContextAsync();
@@ -77,5 +76,18 @@ public class TextService : ITextService
 			?? throw new Exception($"The text with Uid {guid} was not found");
 
 		return _mapper.Map<TextModel>(text);
+	}
+
+	public async Task UpdateText(Guid guid, EditTextModel model)
+	{
+		using var context = await _dbContextFactory.CreateDbContextAsync();
+
+		Text text = await context.Set<Text>().FirstOrDefaultAsync(x => x.Uid == guid)
+			?? throw new Exception($"The text with Uid {guid} was not found");
+
+		text = _mapper.Map(model, text);
+
+		context.Set<Text>().Update(text);
+		context.SaveChanges();
 	}
 }

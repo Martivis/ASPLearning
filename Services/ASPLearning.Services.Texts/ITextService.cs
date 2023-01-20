@@ -11,6 +11,7 @@ public interface ITextService
 {
 	Task<IEnumerable<TextModel>> GetAllTexts(int page = 0, int pageSize = 10);
 	Task<TextModel> GetText(Guid guid);
-	Task<TextModel> AddText(AddTextModel model);
+	Task AddText(EditTextModel model);
+	Task UpdateText(Guid guid, EditTextModel model);
 	Task DeleteBook(Guid guid);
 }

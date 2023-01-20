@@ -4,15 +4,15 @@ using FluentValidation;
 using AutoMapper;
 using ASPLearning.Context.Entities;
 
-public class AddTextModel
+public class EditTextModel
 {
 	public string Title { get; set; }
 	public string Text { get; set; }
 }
 
-public class AddTextModelValidator : AbstractValidator<AddTextModel>
+public class EditTextModelValidator : AbstractValidator<EditTextModel>
 {
-	public AddTextModelValidator()
+	public EditTextModelValidator()
 	{
 		RuleFor(x => x.Title)
 			.MinimumLength(5).WithMessage("Title should be longer than 5 symbols")
@@ -24,11 +24,11 @@ public class AddTextModelValidator : AbstractValidator<AddTextModel>
 	}
 }
 
-public class AddTextModelProfile : Profile
+public class EditTextModelProfile : Profile
 {
-	public AddTextModelProfile()
+	public EditTextModelProfile()
 	{
-		CreateMap<AddTextModel, Text>()
+		CreateMap<EditTextModel, Text>()
 			.ForMember(target => target.Content, a => a.MapFrom(x => x.Text));
 	}
 }
