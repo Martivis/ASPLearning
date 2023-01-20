@@ -13,5 +13,5 @@ public interface ITextService
 	Task<TextModel> GetText(Guid guid);
 	Task AddText(EditTextModel model);
 	Task UpdateText(Guid guid, EditTextModel model);
-	Task DeleteBook(Guid guid);
+	Task DeleteText(Guid guid);
 }

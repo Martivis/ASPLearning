@@ -42,6 +42,15 @@ public class TextService : ITextService
 
 		return data;
 	}
+	public async Task<TextModel> GetText(Guid guid)
+	{
+		using var context = await _dbContextFactory.CreateDbContextAsync();
+
+		var text = await context.Set<Text>().FirstOrDefaultAsync(x => x.Uid == guid)
+			?? throw new Exception($"The text with Uid {guid} was not found");
+
+		return _mapper.Map<TextModel>(text);
+	}
 
 	public async Task AddText(EditTextModel model)
 	{
@@ -57,26 +66,17 @@ public class TextService : ITextService
 		//return _mapper.Map<TextModel>(text);
 	}
 
-	public async Task DeleteBook(Guid guid)
-	{
-		using var context = await _dbContextFactory.CreateDbContextAsync();
-
-		var text = context.Set<Text>().FirstOrDefaultAsync(x => x.Uid == guid)
-			?? throw new Exception($"The text with Uid {guid} was not found");
-
-		context.Remove(text);
-		context.SaveChanges();
-	}
-
-	public async Task<TextModel> GetText(Guid guid)
+	public async Task DeleteText(Guid guid)
 	{
 		using var context = await _dbContextFactory.CreateDbContextAsync();
 
 		var text = await context.Set<Text>().FirstOrDefaultAsync(x => x.Uid == guid)
 			?? throw new Exception($"The text with Uid {guid} was not found");
 
-		return _mapper.Map<TextModel>(text);
+		context.Remove(text);
+		context.SaveChanges();
 	}
+
 
 	public async Task UpdateText(Guid guid, EditTextModel model)
 	{

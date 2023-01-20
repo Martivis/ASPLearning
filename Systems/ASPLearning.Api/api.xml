@@ -16,5 +16,42 @@
             </summary>
             <returns>15</returns>
         </member>
+        <member name="M:ASPLearning.Api.Controllers.TextsController.GetAllTexts(System.Int32,System.Int32)">
+            <summary>
+            Get all texts
+            </summary>
+            <param name="page">Page number</param>
+            <param name="pageSize">Elements per page</param>
+            <response code="200">List of TextModels</response>
+        </member>
+        <member name="M:ASPLearning.Api.Controllers.TextsController.AddText(ASPLearning.Services.Texts.EditTextModel)">
+            <summary>
+            Add new text
+            </summary>
+            <param name="model">New EditTextModel</param>
+            <response code="200"></response>
+        </member>
+        <member name="M:ASPLearning.Api.Controllers.TextsController.GetText(System.Guid)">
+            <summary>
+            Get text by guid
+            </summary>
+            <param name="guid">Text guid</param>
+            <response code="200">TextModel</response>response>
+        </member>
+        <member name="M:ASPLearning.Api.Controllers.TextsController.UpdateText(System.Guid,ASPLearning.Services.Texts.EditTextModel)">
+            <summary>
+            Update existing text
+            </summary>
+            <param name="guid">Target text guid</param>
+            <param name="model">Updated text EditTextModel</param>
+            <response code="200"></response>
+        </member>
+        <member name="M:ASPLearning.Api.Controllers.TextsController.DeleteText(System.Guid)">
+            <summary>
+            Delete existing text
+            </summary>
+            <param name="guid">Target text guid</param>
+            <response code="200"></response>
+        </member>
     </members>
 </doc>

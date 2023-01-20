@@ -1,6 +1,8 @@
 using ASPLearning.Api.Configuration;
 using ASPLearning.Context;
 using ASPLearning.Context.Setup;
+using ASPLearning.Services;
+using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,12 +11,17 @@ builder.AddAppLogger();
 var services = builder.Services;
 
 services.AddHttpContextAccessor();
-services.AddControllers();
+
+services.AddControllers()
+	.AddValidator();
+
 services.AddAppUsersDb();
 services.AddAppVersioning();
 services.AddAppSwagger();
 services.AddAppHealthCheck();
 services.AddAppAutomapper();
+
+services.AddTextService();
 
 var app = builder.Build();
 
