@@ -27,6 +27,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPLearning.Context.Migrati
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{79E53892-D163-46AA-B155-3B98094D6F98}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPLearning.Services.Texts", "Services\ASPLearning.Services.Texts\ASPLearning.Services.Texts.csproj", "{E03E4533-F019-47CC-B963-4DE729DE0FE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPLearning.Common", "Shared\ASPLearning.Common\ASPLearning.Common.csproj", "{D37A55B4-FA16-4F14-8CF9-6EA545CA47DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +65,14 @@ Global
 		{79E53892-D163-46AA-B155-3B98094D6F98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79E53892-D163-46AA-B155-3B98094D6F98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79E53892-D163-46AA-B155-3B98094D6F98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E03E4533-F019-47CC-B963-4DE729DE0FE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E03E4533-F019-47CC-B963-4DE729DE0FE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E03E4533-F019-47CC-B963-4DE729DE0FE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E03E4533-F019-47CC-B963-4DE729DE0FE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D37A55B4-FA16-4F14-8CF9-6EA545CA47DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D37A55B4-FA16-4F14-8CF9-6EA545CA47DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D37A55B4-FA16-4F14-8CF9-6EA545CA47DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D37A55B4-FA16-4F14-8CF9-6EA545CA47DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +85,8 @@ Global
 		{490619F8-1494-451F-96BC-52329406E9D9} = {4B8513BB-DE40-4DD3-9982-40B6BE366BE9}
 		{DB453662-1EE8-4B62-9162-5488E91A74F4} = {490619F8-1494-451F-96BC-52329406E9D9}
 		{5F8B0F51-78A8-47AC-BBB3-E7096633C104} = {490619F8-1494-451F-96BC-52329406E9D9}
+		{E03E4533-F019-47CC-B963-4DE729DE0FE3} = {9668B85E-C0B8-493F-9D47-1702D732AB01}
+		{D37A55B4-FA16-4F14-8CF9-6EA545CA47DB} = {458AA72D-66A3-4464-B630-8A95C7E95926}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {75DAC23B-DF8A-4D56-995A-E879AC3E914A}

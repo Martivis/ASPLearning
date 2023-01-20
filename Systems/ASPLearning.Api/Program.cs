@@ -14,6 +14,7 @@ services.AddAppUsersDb();
 services.AddAppVersioning();
 services.AddAppSwagger();
 services.AddAppHealthCheck();
+services.AddAppAutomapper();
 
 var app = builder.Build();
 
