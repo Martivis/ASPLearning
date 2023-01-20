@@ -20,6 +20,7 @@ namespace ASPLearning.Context.Setup
 				await AddExampleData(serviceProvider);
 			});
 		}
+
 		private static async Task AddExampleData(IServiceProvider serviceProvider)
 		{
 			await using var context = serviceProvider.GetService<IServiceScopeFactory>()!.CreateScope()
