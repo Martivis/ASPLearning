@@ -25,13 +25,6 @@ namespace ASPLearning.Context
 
 			modelBuilder.Entity<User>().ToTable("users");
 
-			modelBuilder.Entity<User>()
-				.HasIndex(t => t.Name)
-				.IsUnique();
-			modelBuilder.Entity<User>().Property(t => t.Name)
-				.IsRequired()
-				.HasMaxLength(15);
-
 			modelBuilder.Entity<Text>().ToTable("texts");
 			modelBuilder.Entity<Text>().Property(t => t.Title)
 				.IsRequired()

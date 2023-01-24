@@ -7,7 +7,7 @@ using ASPLearning.Context.Settings;
 
 public static class DbServiesExtentions
 {
-	public static IServiceCollection AddAppUsersDb(this IServiceCollection services)
+	public static IServiceCollection AddAppDbContext(this IServiceCollection services)
 	{
 		var settings = ASPLearning.Settings.Settings.Load<AppDbSettings>("Database");
 		services.AddSingleton(settings);

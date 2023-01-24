@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ASPLearning.Services;
 
-public static class TextServicesExtentions
+public static class TestBootstraper
 {
 	public static IServiceCollection AddTextService(this IServiceCollection services)
 	{

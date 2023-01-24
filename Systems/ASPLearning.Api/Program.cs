@@ -15,7 +15,7 @@ services.AddHttpContextAccessor();
 services.AddControllers()
 	.AddValidator();
 
-services.AddAppUsersDb();
+services.AddAppDbContext();
 services.AddAppVersioning();
 services.AddAppSwagger();
 services.AddAppHealthCheck();
