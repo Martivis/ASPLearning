@@ -9,11 +9,11 @@ var services = builder.Services;
 
 services.AddHttpContextAccessor();
 services.AddAppDbContext();
+services.AddAppIdentityServer();
 services.AddAppHealthCheck();
 
-
 var app = builder.Build();
-
+app.UseAppIdentityServer();
 app.UseAppHealthChecks();
 
 app.Run();

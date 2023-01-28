@@ -28,6 +28,9 @@ public static class IdentityServerConfiguration
 			.AddInMemoryApiScopes(AppApiScopes.ApiScopes)
 			.AddInMemoryClients(AppClients.Clients)
 			.AddInMemoryIdentityResources(AppIdentityResources.Resources)
+
+			.AddTestUsers(AppApiTestUsers.ApiUsers)
+
 			.AddDeveloperSigningCredential();
 
 		return services;

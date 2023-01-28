@@ -28,24 +28,24 @@ namespace ASPLearning.Context.Setup
 			if (context.Users.Any() || context.Texts.Any())
 				return;
 
-			List<User> users = new List<User>
-			{
-				new User
-				{
-					Name = "Jarko",
-					Email = "jaria@mail.ru"
-				},
-				new User
-				{
-					Name = "Lena",
-					Email = "elenare@mail.ru"
-				},
-				new User
-				{
-					Name = "Statustas",
-					Email = "alexanderpetr@mail.ru"
-				}
-			};
+			//List<User> users = new List<User>
+			//{
+			//	new User
+			//	{
+			//		Name = "Jarko",
+			//		Email = "jaria@mail.ru"
+			//	},
+			//	new User
+			//	{
+			//		Name = "Lena",
+			//		Email = "elenare@mail.ru"
+			//	},
+			//	new User
+			//	{
+			//		Name = "Statustas",
+			//		Email = "alexanderpetr@mail.ru"
+			//	}
+			//};
 
 			List<Text> texts = new List<Text>
 			{
@@ -65,7 +65,7 @@ namespace ASPLearning.Context.Setup
 				text.Size = text.Content.Length;
 			}
 
-			context.Users.AddRange(users);
+			//context.Users.AddRange(users);
 			context.Texts.AddRange(texts);
 			context.SaveChanges();
 		}
