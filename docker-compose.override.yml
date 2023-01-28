@@ -1,24 +1,27 @@
 version: '3.4'
 
 services:
-  asplearning_mssql:
-    environment:
-      - ACCEPT_EULA=Y
-      - MSSQL_SA_PASSWORD=P@ssw0rd
+  asplearning.postgres:
+    env_file:
+      - env.postgres
     ports:
-      - 5212:5212
+      - "49153:5432"
     networks:
       - shared_asplearning
     volumes:
       - ~/.docker-conf/mssql/data/:/var/lib/mssql/data
 
   asplearning.api:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=https://+:443;http://+:80
     ports:
-      - "80"
-      - "443"
+      - "10000:80"
+    env_file:
+      - env.api
+
+  asplearning.identity:
+    ports:
+      - "10001:80"
+    env_file:
+      - env.identity
 
 networks:
   shared_asplearning:
