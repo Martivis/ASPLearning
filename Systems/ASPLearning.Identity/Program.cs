@@ -11,6 +11,7 @@ services.AddHttpContextAccessor();
 services.AddAppDbContext();
 services.AddAppIdentityServer();
 services.AddAppHealthCheck();
+services.AddAppCors();
 
 var app = builder.Build();
 app.UseAppIdentityServer();

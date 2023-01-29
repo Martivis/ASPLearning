@@ -5,10 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ASPLearning.Context.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace ASPLearning.Context
 {
-	public class AppDbContext : DbContext
+	public class AppDbContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
 	{
 		public DbSet<User> Users { get; set; }
 		public DbSet<Text> Texts { get; set; }

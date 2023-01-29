@@ -6,6 +6,7 @@ using ASPLearning.Api.Settings;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.OpenApi.Models;
+using ASPLearning.Common.Security;
 
 public static class SwaggerConfiguration
 {
@@ -30,11 +31,49 @@ public static class SwaggerConfiguration
 					});
 				}
 			});
+
 		services.AddSwaggerGen(options =>
 		{
 			var xmlFileName = "api.xml";
 			var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFileName);
 			options.IncludeXmlComments(xmlPath);
+
+			options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+			{
+				Name = "Bearer",
+				Type = SecuritySchemeType.OAuth2,
+				Scheme = "oauth2",
+				BearerFormat = "JWT",
+				In = ParameterLocation.Header,
+				Flows = new OpenApiOAuthFlows
+				{
+					Password = new OpenApiOAuthFlow
+					{
+						TokenUrl = new Uri($"http://localhost:10001/connect/token"),
+						Scopes = new Dictionary<string, string>
+						{
+							{ AppScopes.TextsRead, "TextsRead" },
+							{ AppScopes.TextsWrite, "TextsWrite" }
+						}
+					}
+				}
+			});
+			
+			options.AddSecurityRequirement(new OpenApiSecurityRequirement
+			{
+				{
+					new OpenApiSecurityScheme
+					{
+						Reference = new OpenApiReference
+						{
+							Type = ReferenceType.SecurityScheme,
+							Id = "oauth2"
+						}
+					},
+					new List<string>()
+				}
+			});
+
 		});
 
 		return services;
