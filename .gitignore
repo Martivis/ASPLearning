@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Systems/ASPLearning.Identity/keys
+/Systems/ASPLearning.Identity/tempkey.jwk
