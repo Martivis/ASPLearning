@@ -33,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPLearning.Identity", "Sys
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{79E53892-D163-46AA-B155-3B98094D6F98}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPLearning.Services.UserAccount", "Services\ASPLearning.Services.UserAccount\ASPLearning.Services.UserAccount.csproj", "{B5C9BD4C-3F96-4161-BB86-18690B869646}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{79E53892-D163-46AA-B155-3B98094D6F98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79E53892-D163-46AA-B155-3B98094D6F98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79E53892-D163-46AA-B155-3B98094D6F98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5C9BD4C-3F96-4161-BB86-18690B869646}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5C9BD4C-3F96-4161-BB86-18690B869646}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5C9BD4C-3F96-4161-BB86-18690B869646}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5C9BD4C-3F96-4161-BB86-18690B869646}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +100,7 @@ Global
 		{E03E4533-F019-47CC-B963-4DE729DE0FE3} = {9668B85E-C0B8-493F-9D47-1702D732AB01}
 		{D37A55B4-FA16-4F14-8CF9-6EA545CA47DB} = {458AA72D-66A3-4464-B630-8A95C7E95926}
 		{FC1141DE-EAE9-487B-925C-AFA1F292C611} = {F9A8D1C6-2626-4D7F-933A-A2903DC27268}
+		{B5C9BD4C-3F96-4161-BB86-18690B869646} = {9668B85E-C0B8-493F-9D47-1702D732AB01}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {75DAC23B-DF8A-4D56-995A-E879AC3E914A}

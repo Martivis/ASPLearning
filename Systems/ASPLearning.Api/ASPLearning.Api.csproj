@@ -16,6 +16,7 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="FluentValidation" Version="11.4.0" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.2" />
@@ -36,6 +37,7 @@
     <ProjectReference Include="..\..\Data\Migrations\ASPLearning.Context.MigrationsMSSQL\ASPLearning.Context.MigrationsMSSQL.csproj" />
     <ProjectReference Include="..\..\Data\Migrations\ASPLearning.Context.MigrationsPostgreSQL\ASPLearning.Context.MigrationsPostgreSQL.csproj" />
     <ProjectReference Include="..\..\Services\ASPLearning.Services.Texts\ASPLearning.Services.Texts.csproj" />
+    <ProjectReference Include="..\..\Services\ASPLearning.Services.UserAccount\ASPLearning.Services.UserAccount.csproj" />
     <ProjectReference Include="..\..\Shared\ASPLearning.Settings\ASPLearning.Settings.csproj" />
   </ItemGroup>
 

@@ -11,13 +11,10 @@ using ASPLearning.Common.Security;
 public static class SwaggerConfiguration
 {
 	private static readonly string _appTitle = "ASP Learning Api";
-	public static IServiceCollection AddAppSwagger(this IServiceCollection services)
+	public static IServiceCollection AddAppSwagger(this IServiceCollection services, IdentitySettings identitySettings)
 	{
 		var settings = Settings.Load<SwaggerSettings>("Swagger");
 		services.AddSingleton(settings);
-
-		var identitySettings = Settings.Load<IdentitySettings>("Identity");
-		services.AddSingleton(identitySettings);
 
 		if (!settings.Enabled)
 			return services;
