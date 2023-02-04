@@ -27,8 +27,7 @@ namespace ASPLearning.Services.UserAccount
 		{
 			_validator.Check(model);
 
-			var user = await _userManager.FindByEmailAsync(model.Email) ??
-				await _userManager.FindByNameAsync(model.Name);
+			var user = await _userManager.FindByEmailAsync(model.Email);
 			if (user != null)
 				throw new Exception($"User account with email {model.Email} already exists");
 
