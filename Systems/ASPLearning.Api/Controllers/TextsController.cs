@@ -1,4 +1,5 @@
 ﻿using ASPLearning.Services.Texts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -37,6 +38,7 @@ namespace ASPLearning.Api.Controllers
 		/// <param name="model">New EditTextModel</param>
 		/// <response code="200"></response>
 		[HttpPost("")]
+		[Authorize]
 		public async Task<IActionResult> AddText([FromBody] EditTextModel model)
 		{
 			await _textService.AddText(model);
@@ -50,6 +52,7 @@ namespace ASPLearning.Api.Controllers
 		/// <response code="200">TextModel</response>response>
 		[ProducesResponseType(typeof(TextModel), 200)]
 		[HttpGet("{guid}")]
+		[Authorize]
 		public async Task<TextModel> GetText([FromRoute] Guid guid)
 		{
 			var text = await _textService.GetText(guid);
@@ -63,6 +66,7 @@ namespace ASPLearning.Api.Controllers
 		/// <param name="model">Updated text EditTextModel</param>
 		/// <response code="200"></response>
 		[HttpPut("{guid}")]
+		[Authorize]
 		public async Task<IActionResult> UpdateText([FromRoute] Guid guid, [FromBody] EditTextModel model)
 		{
 			await _textService.UpdateText(guid, model);
@@ -75,6 +79,7 @@ namespace ASPLearning.Api.Controllers
 		/// <param name="guid">Target text guid</param>
 		/// <response code="200"></response>
 		[HttpDelete("{guid}")]
+		[Authorize]
 		public async Task<IActionResult> DeleteText([FromRoute] Guid guid)
 		{
 			await _textService.DeleteText(guid);
