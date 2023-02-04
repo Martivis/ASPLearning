@@ -16,6 +16,9 @@ public static class SwaggerConfiguration
 		var settings = Settings.Load<SwaggerSettings>("Swagger");
 		services.AddSingleton(settings);
 
+		var identitySettings = Settings.Load<IdentitySettings>("Identity");
+		services.AddSingleton(identitySettings);
+
 		if (!settings.Enabled)
 			return services;
 
@@ -49,7 +52,7 @@ public static class SwaggerConfiguration
 				{
 					Password = new OpenApiOAuthFlow
 					{
-						TokenUrl = new Uri($"http://localhost:10001/connect/token"),
+						TokenUrl = new Uri($"{identitySettings.URL}/{identitySettings.TokenAddress}"),
 						Scopes = new Dictionary<string, string>
 						{
 							{ AppScopes.TextsRead, "TextsRead" },
