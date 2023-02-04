@@ -29,7 +29,7 @@ public static class IdentityServerConfiguration
 			.AddInMemoryClients(AppClients.Clients)
 			.AddInMemoryIdentityResources(AppIdentityResources.Resources)
 
-			//.AddTestUsers(AppApiTestUsers.ApiUsers)
+			.AddTestUsers(AppApiTestUsers.ApiUsers)
 
 			.AddDeveloperSigningCredential();
 

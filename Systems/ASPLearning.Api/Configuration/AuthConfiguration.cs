@@ -37,7 +37,7 @@ public static class AuthConfiguration
 		})
 			.AddJwtBearer(IdentityServerAuthenticationDefaults.AuthenticationScheme, options =>
 			{
-				options.RequireHttpsMetadata = false;
+				options.RequireHttpsMetadata = identitySettings.URL.StartsWith("https://");
 				options.Authority = identitySettings.URL;
 				options.TokenValidationParameters = new TokenValidationParameters
 				{
