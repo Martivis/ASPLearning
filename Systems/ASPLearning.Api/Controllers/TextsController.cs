@@ -1,4 +1,5 @@
-﻿using ASPLearning.Services.Texts;
+﻿using ASPLearning.Common.Security;
+using ASPLearning.Services.Texts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -26,6 +27,7 @@ namespace ASPLearning.Api.Controllers
 		/// <response code="200">List of TextModels</response>
 		[ProducesResponseType(typeof(IEnumerable<TextModel>), 200)]
 		[HttpGet("")]
+		[Authorize]
 		public async Task<IEnumerable<TextModel>> GetAllTexts([FromQuery]int page = 0, [FromQuery]int pageSize = 10)
 		{
 			var texts = await _textService.GetAllTexts(page, pageSize);
@@ -38,7 +40,7 @@ namespace ASPLearning.Api.Controllers
 		/// <param name="model">New EditTextModel</param>
 		/// <response code="200"></response>
 		[HttpPost("")]
-		[Authorize]
+		[Authorize(Policy = AppScopes.TextsWrite)]
 		public async Task<IActionResult> AddText([FromBody] EditTextModel model)
 		{
 			await _textService.AddText(model);
@@ -52,7 +54,7 @@ namespace ASPLearning.Api.Controllers
 		/// <response code="200">TextModel</response>response>
 		[ProducesResponseType(typeof(TextModel), 200)]
 		[HttpGet("{guid}")]
-		[Authorize]
+		[Authorize(Policy = AppScopes.TextsRead)]
 		public async Task<TextModel> GetText([FromRoute] Guid guid)
 		{
 			var text = await _textService.GetText(guid);
@@ -66,7 +68,7 @@ namespace ASPLearning.Api.Controllers
 		/// <param name="model">Updated text EditTextModel</param>
 		/// <response code="200"></response>
 		[HttpPut("{guid}")]
-		[Authorize]
+		[Authorize(Policy = AppScopes.TextsWrite)]
 		public async Task<IActionResult> UpdateText([FromRoute] Guid guid, [FromBody] EditTextModel model)
 		{
 			await _textService.UpdateText(guid, model);
@@ -79,7 +81,7 @@ namespace ASPLearning.Api.Controllers
 		/// <param name="guid">Target text guid</param>
 		/// <response code="200"></response>
 		[HttpDelete("{guid}")]
-		[Authorize]
+		[Authorize(Policy = AppScopes.TextsWrite)]
 		public async Task<IActionResult> DeleteText([FromRoute] Guid guid)
 		{
 			await _textService.DeleteText(guid);

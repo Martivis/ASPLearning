@@ -15,6 +15,7 @@ COPY ["Data/Migrations/ASPLearning.Context.MigrationsMSSQL/ASPLearning.Context.M
 COPY ["Data/Migrations/ASPLearning.Context.MigrationsPostgreSQL/ASPLearning.Context.MigrationsPostgreSQL.csproj", "Data/Migrations/ASPLearning.Context.MigrationsPostgreSQL/"]
 COPY ["Services/ASPLearning.Services.Texts/ASPLearning.Services.Texts.csproj", "Services/ASPLearning.Services.Texts/"]
 COPY ["Shared/ASPLearning.Common/ASPLearning.Common.csproj", "Shared/ASPLearning.Common/"]
+COPY ["Services/ASPLearning.Services.UserAccount/ASPLearning.Services.UserAccount.csproj", "Services/ASPLearning.Services.UserAccount/"]
 RUN dotnet restore "Systems/ASPLearning.Api/ASPLearning.Api.csproj"
 COPY . .
 WORKDIR "/src/Systems/ASPLearning.Api"
