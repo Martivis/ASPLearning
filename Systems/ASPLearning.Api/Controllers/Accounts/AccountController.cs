@@ -20,6 +20,11 @@ namespace ASPLearning.Api.Controllers.Accounts
 			_userAccountService = userAccountService;
 		}
 
+		/// <summary>
+		/// Register new user
+		/// </summary>
+		/// <param name="request">RegisterUserAccountRequest</param>
+		/// <response code="200">Registered user model</response>
 		[HttpPost("")]
 		public async Task<UserAccountResponse> Register([FromBody] RegisterUserAccountRequest request)
 		{
@@ -28,6 +33,11 @@ namespace ASPLearning.Api.Controllers.Accounts
 			return _mapper.Map<UserAccountResponse>(user);
 		}
 
+		/// <summary>
+		/// Change password
+		/// </summary>
+		/// <param name="request">ChangePasswordRequest</param>
+		/// <response code="200">Success report</response>
 		[HttpPatch("")]
 		[Authorize]
 		public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordRequest request)
