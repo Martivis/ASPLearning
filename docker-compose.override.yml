@@ -2,24 +2,28 @@ version: '3.4'
 
 services:
   asplearning.postgres:
-    env_file:
-      - env.postgres
     ports:
       - "49153:5432"
     networks:
       - shared_asplearning
     volumes:
       - ~/.docker-conf/mssql/data/:/var/lib/mssql/data
+    env_file:
+      - env.postgres
 
   asplearning.api:
     ports:
       - "10000:80"
+    networks:
+      - "shared_asplearning"
     env_file:
       - env.api
 
   asplearning.identity:
     ports:
       - "10001:80"
+    networks:
+    - "shared_asplearning"
     env_file:
       - env.identity
 
